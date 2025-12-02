@@ -74,7 +74,7 @@ func dayOnePartTwo(input string) int {
 }
 
 func readInput() string {
-	content, err := os.ReadFile("input.txt")
+	content, err := os.ReadFile("day1/input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}

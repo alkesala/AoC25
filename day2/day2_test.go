@@ -34,30 +34,6 @@ func TestIsInvalid(t *testing.T) {
 
 }
 
-func TestSumInvalidInRange(t *testing.T) {
-	tests := []struct {
-		name     string
-		start    int
-		end      int
-		expected int
-	}{
-		{"range 11-22", 11, 22, 33},
-		{"range 95-115", 95, 115, 99},
-		{"range 1188511880-1188511890", 1188511880, 1188511890, 1188511885},
-		{"range with no invalids", 1698522, 1698528, 0},
-		{"range 446443-446449", 446443, 446449, 446446},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			result := sumInvalidInRange(tt.start, tt.end)
-			if result != tt.expected {
-				t.Errorf("SumValid(%d) = %d, want %d", tt.start, tt.end, tt.expected)
-			}
-		},
-		)
-	}
-}
-
 func TestCalculateTotal(t *testing.T) {
 	input := "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124"
 	expected := 1227775554
@@ -67,6 +43,3 @@ func TestCalculateTotal(t *testing.T) {
 		t.Errorf("calculateTotal() = %d, want %d", result, expected)
 	}
 }
-
-// read line, convert to string - find comma - find dash - split it two a n b -
-// if a < b continue => +1 iteration and check if [i:] == [j:] new sum = (i + j) + sum - sum = newSum

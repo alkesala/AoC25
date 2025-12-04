@@ -12,11 +12,12 @@ import (
 func SolveDayOne() {
 	input := readInput()
 	result1 := dayOnePartOne(input)
-	fmt.Print(result1)
 	result2 := dayOnePartTwo(input)
-	fmt.Print("\n", result2)
-}
 
+	fmt.Println("\n=== Day 1 ===")
+	fmt.Println("Part 1:", result1)
+	fmt.Println("Part 2:", result2)
+}
 func dayOnePartOne(input string) int {
 
 	var result int
